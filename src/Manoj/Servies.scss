@@ -1,0 +1,32 @@
+.service{
+    width: 97%;
+    padding: 7px;
+    box-shadow: 2px 2px 20px black;
+    margin: 15px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    &:hover{
+        transform: scale(1.023);
+    }
+    .head{
+        color: skyblue;
+        font-size: 1.6rem;
+        animation: wave 0.5s ease-in-out infinite;
+    }
+}
+@keyframes wave {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+        /* Move up */
+    }
+
+    100% {
+        transform: translateY(0);
+        /* Move back to the original position */
+    }
+}

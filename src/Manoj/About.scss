@@ -1,0 +1,153 @@
+.Skills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  
+    ul {
+      width: 100%;
+      list-style: none;
+      font-size: larger;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      li {
+        margin-top: 0.5rem;
+        margin-bottom: 1rem; 
+      }
+  
+      .Animation {
+        position: relative;
+        width: 100%;
+        height: 20px;
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: transparent;
+        &::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          background-color: rgb(14, 238, 14);
+          animation: Html 3s forwards;
+        }
+        &.Html::after{
+          content: '';
+            animation: Html 3s forwards;
+        }
+        &.css::after{
+            content: '';
+            animation: css 3s forwards;
+        }
+        &.js::after{
+            content: '';
+            animation: js 3s forwards;
+        }
+        &.sass::after{
+            content: '';
+            animation: sass 3s forwards;
+        }
+        &.my::after{
+            content: '';
+            animation: my 3s forwards;
+        }
+        &.cj::after{
+            content: '';
+            animation: cj 3s forwards;
+        }
+        &.aj::after{
+            content: '';
+            animation: aj 3s forwards;
+        }
+        &.gt::after{
+            content: '';
+            animation: gt 3s forwards;
+        }
+      }
+    }
+  }
+  
+  @keyframes Html {
+    0% {
+      left: 0;
+      width: 0%;
+    }
+    100% {
+      width: 90%;
+      border-radius: 10px;
+    }
+  }
+  @keyframes css {
+    0% {
+      left: 0;
+      width: 0%;
+    }
+    100% {
+      width: 90%;
+      border-radius: 10px;
+    }
+  }
+  @keyframes js {
+    0% {
+      left: 0;
+      width: 0%;
+    }
+    100% {
+      width: 70%;
+      border-radius: 10px;
+    }
+  }
+  @keyframes sass {
+    0% {
+      left: 0;
+      width: 0%;
+    }
+    100% {
+      width: 90%;
+      border-radius: 10px;
+    }
+  }
+  @keyframes my {
+    0% {
+      left: 0;
+      width: 0%;
+    }
+    100% {
+      width: 70%;
+      border-radius: 10px;
+    }
+  }
+  @keyframes cj {
+    0% {
+      left: 0;
+      width: 0%;
+    }
+    100% {
+      width: 70%;
+      border-radius: 10px;
+    }
+  }
+  @keyframes aj {
+    0% {
+      left: 0;
+      width: 0%;
+    }
+    100% {
+      width: 60%;
+      border-radius: 10px;
+    }
+  }
+  @keyframes gt {
+    0% {
+      left: 0;
+      width: 0%;
+    }
+    100% {
+      width: 90%;
+      border-radius: 10px;
+    }
+  }
+
