@@ -1,121 +1,189 @@
+/* ✅ General Styles */
 .main1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap; 
-    color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: black;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 1200px; /* Increased width */
+  margin: auto;
+  gap: 40px; /* More spacing */
+}
+
+/* ✅ Image Container */
+.img {
+  flex: 1;
+  max-width: 500px;
+  text-align: center;
+}
+
+.img img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 15px;
+  border: 4px solid #f4a261;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* ✅ Details Section */
+.detial1 {
+  flex: 0.5;
+  text-align: left;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #f4a261;
+}
+
+.detial p {
+  font-size: 1.2rem;
+  margin: 8px 0;
+  color: #333;
+}
+
+.detial a {
+  color: #f4a261;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.detial a:hover {
+  color: #e76f51;
+}
+
+/* ✅ Button Styling */
+button {
+  background-color: green;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block;
+  margin: 15px auto; /* Centers button */
+}
+
+button:hover {
+  background-color: darkgreen;
+  transform: scale(1.05);
+}
+
+/* ✅ Tablets (max-width: 900px) */
+@media (max-width: 900px) {
+  .main1 {
+    flex-direction: column;
+    text-align: center;
     padding: 2rem;
-    border-radius: 10px;
-    max-width: 1000px;
-    margin: 100px;
-  
-    .img {
-      flex: 1;
-      max-width: 400px; // ✅ Increased image size
-      text-align: center;
-      margin-bottom: 20px;
-  
-      img {
-        width: 100%;
-        max-width: 350px; // ✅ Bigger image
-        height: auto;
-        border-radius: 15px; // ✅ Softer look
-        border: 4px solid #f4a261;
-        transition: transform 0.3s ease;
-  
-        &:hover {
-          transform: scale(1.05);
-        }
-      }
-    }
-  
-    .detial1 {
-      text-align: left;
-      padding: 10px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15); // ✅ Stronger box shadow
-  
-      h1 {
-        font-size: 2.5rem; // ✅ Bigger heading
-        font-weight: 600;
-        color: #f4a261;
-      }
-  
-      .detial {
-        margin-top: 15px;
-  
-        p {
-          font-size: 1.2rem; // ✅ Larger text
-          margin: 8px 0;
-          color: #333;
-          
-          a {
-            color: #f4a261;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-  
-            &:hover {
-              color: #e76f51;
-            }
-          }
-        }
-      }
-    }
   }
-  
-  // ✅ Responsive Design
-  @media (max-width: 768px) {
-    .main1 {
-      flex-direction: column;
-      text-align: center;
-      padding: 1.5rem;
-    }
-  
-    .img {
-      max-width: 100%;
-    }
-  
-    .img img {
-      max-width: 300px; // ✅ Adjusts image size on smaller screens
-    }
-  
-    .detial1 {
-      text-align: center;
-      padding: 15px;
-  
-      h1 {
-        font-size: 2rem; // ✅ Adjust heading for small screens
-      }
-  
-      .detial {
-        p {
-          font-size: 1rem;
-        }
-      }
-    }
+
+  .img {
+    max-width: 80%;
   }
-  
-  @media (max-width: 480px) {
-    .main1 {
-      padding: 1rem;
-    }
-  
-    .img img {
-      max-width: 280px; // ✅ Further reduce image for smaller screens
-    }
-  
-    .detial1 {
-      h1 {
-        font-size: 1.8rem;
-      }
-  
-      .detial {
-        p {
-          font-size: 0.9rem;
-        }
-      }
-    }
+
+  .img img {
+    max-width: 500px;
   }
-  
+
+  .detial1 {
+    text-align: center;
+    padding: 20px;
+    max-width: 700px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .detial p {
+    font-size: 1.1rem;
+  }
+}
+
+/* ✅ Mobile Screens (max-width: 600px) */
+@media (max-width: 600px) {
+  .main1 {
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .img {
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .img img {
+    max-width: 90vw;
+    height: auto;
+  }
+
+  .detial1 {
+    padding: 15px;
+    max-width: 100%;
+    box-shadow: none;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .detial p {
+    font-size: 1rem;
+  }
+
+  button {
+    width: 90%;
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+/* ✅ Extra Small Screens (max-width: 400px) */
+@media (max-width: 400px) {
+  .main1 {
+    padding: 1rem;
+  }
+
+  .img {
+    max-width: 100%;
+  }
+
+  .img img {
+    max-width: 100%;
+  }
+
+  .detial1 {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .detial p {
+    font-size: 0.9rem;
+  }
+
+  button {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}

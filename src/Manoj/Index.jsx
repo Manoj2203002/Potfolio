@@ -15,7 +15,7 @@ const Index = () => {
       <div className="header">
         <header className="mani">
           <nav className="nav">
-            <h1>Manoj</h1>
+            <h1>Manoj Kumaresan</h1>
             <div className="nav-links">
               <Link to="/">Home</Link>
               <Link to="/About">About</Link>
