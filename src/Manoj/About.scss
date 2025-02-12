@@ -1,153 +1,178 @@
-.Skills {
+.About {
+  text-align: center;
+  padding: 2rem;
+  color: black;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #f4a261;
+    margin-bottom: 1.5rem;
+  }
+
+  .Skills {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
     width: 100%;
-  
+
     ul {
       width: 100%;
+      max-width: 800px;
       list-style: none;
-      font-size: larger;
-      font-family: Arial, Helvetica, sans-serif;
+      padding: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-  
+
       li {
-        margin-top: 0.5rem;
-        margin-bottom: 1rem; 
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
       }
-  
+
       .Animation {
         position: relative;
         width: 100%;
-        height: 20px;
-        border: 1px solid black;
+        height: 30px;
         border-radius: 10px;
-        background-color: transparent;
+        background-color: #e0e0e0;
+        overflow: hidden;
+        margin-bottom: 1rem;
+
         &::after {
+          content: attr(data-percent);
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 1rem;
+          font-weight: bold;
+          color: white;
+        }
+
+        .progress {
           position: absolute;
           top: 0;
           left: 0;
           height: 100%;
-          background-color: rgb(14, 238, 14);
-          animation: Html 3s forwards;
+          background: linear-gradient(90deg, #f4a261, #e76f51);
+          animation: progressAnimation 3s ease-in-out forwards;
         }
-        &.Html::after{
-          content: '';
-            animation: Html 3s forwards;
+
+        /* 🎯 Skill-specific animations */
+        &.html .progress {
+          animation: htmlProgress 3s ease-in-out forwards;
         }
-        &.css::after{
-            content: '';
-            animation: css 3s forwards;
+        &.css .progress {
+          animation: cssProgress 3s ease-in-out forwards;
         }
-        &.js::after{
-            content: '';
-            animation: js 3s forwards;
+        &.js .progress {
+          animation: jsProgress 3s ease-in-out forwards;
         }
-        &.sass::after{
-            content: '';
-            animation: sass 3s forwards;
+        &.react .progress {
+          animation: reactProgress 3s ease-in-out forwards;
         }
-        &.my::after{
-            content: '';
-            animation: my 3s forwards;
+        &.sass .progress {
+          animation: sassProgress 3s ease-in-out forwards;
         }
-        &.cj::after{
-            content: '';
-            animation: cj 3s forwards;
+        &.mysql .progress {
+          animation: mysqlProgress 3s ease-in-out forwards;
         }
-        &.aj::after{
-            content: '';
-            animation: aj 3s forwards;
+        &.core-java .progress {
+          animation: coreJavaProgress 3s ease-in-out forwards;
         }
-        &.gt::after{
-            content: '';
-            animation: gt 3s forwards;
+        &.advanced-java .progress {
+          animation: advancedJavaProgress 3s ease-in-out forwards;
+        }
+        &.github .progress {
+          animation: githubProgress 3s ease-in-out forwards;
         }
       }
     }
   }
-  
-  @keyframes Html {
-    0% {
-      left: 0;
-      width: 0%;
-    }
-    100% {
-      width: 90%;
-      border-radius: 10px;
-    }
-  }
-  @keyframes css {
-    0% {
-      left: 0;
-      width: 0%;
-    }
-    100% {
-      width: 90%;
-      border-radius: 10px;
-    }
-  }
-  @keyframes js {
-    0% {
-      left: 0;
-      width: 0%;
-    }
-    100% {
-      width: 70%;
-      border-radius: 10px;
-    }
-  }
-  @keyframes sass {
-    0% {
-      left: 0;
-      width: 0%;
-    }
-    100% {
-      width: 90%;
-      border-radius: 10px;
-    }
-  }
-  @keyframes my {
-    0% {
-      left: 0;
-      width: 0%;
-    }
-    100% {
-      width: 70%;
-      border-radius: 10px;
-    }
-  }
-  @keyframes cj {
-    0% {
-      left: 0;
-      width: 0%;
-    }
-    100% {
-      width: 70%;
-      border-radius: 10px;
-    }
-  }
-  @keyframes aj {
-    0% {
-      left: 0;
-      width: 0%;
-    }
-    100% {
-      width: 60%;
-      border-radius: 10px;
-    }
-  }
-  @keyframes gt {
-    0% {
-      left: 0;
-      width: 0%;
-    }
-    100% {
-      width: 90%;
-      border-radius: 10px;
-    }
-  }
+}
 
+/* ✅ Custom keyframes for each skill */
+@keyframes htmlProgress {
+  from { width: 0%; }
+  to { width: 90%; }
+}
+
+@keyframes cssProgress {
+  from { width: 0%; }
+  to { width: 90%; }
+}
+
+@keyframes jsProgress {
+  from { width: 0%; }
+  to { width: 70%; }
+}
+
+@keyframes reactProgress {
+  from { width: 0%; }
+  to { width: 80%; }
+}
+
+@keyframes sassProgress {
+  from { width: 0%; }
+  to { width: 85%; }
+}
+
+@keyframes mysqlProgress {
+  from { width: 0%; }
+  to { width: 70%; }
+}
+
+@keyframes coreJavaProgress {
+  from { width: 0%; }
+  to { width: 75%; }
+}
+
+@keyframes advancedJavaProgress {
+  from { width: 0%; }
+  to { width: 60%; }
+}
+
+@keyframes githubProgress {
+  from { width: 0%; }
+  to { width: 90%; }
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .About {
+    padding: 1.5rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .Skills ul {
+      max-width: 600px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .About {
+    padding: 1rem;
+
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    .Skills ul {
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+
+    .Skills li {
+      font-size: 1.1rem;
+    }
+
+    .Animation {
+      height: 25px;
+    }
+  }
+}

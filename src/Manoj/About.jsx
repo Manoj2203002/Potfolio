@@ -1,31 +1,36 @@
-import React from 'react'
-import './About.scss'
+import React from 'react';
+import './About.scss';
+
+const skills = [
+  { name: "HTML", className: "html", percent: "90%" },
+  { name: "CSS", className: "css", percent: "90%" },
+  { name: "JavaScript", className: "js", percent: "70%" },
+  { name: "React.js", className: "react", percent: "80%" },
+  { name: "SASS", className: "sass", percent: "85%" },
+  { name: "MySQL", className: "mysql", percent: "70%" },
+  { name: "Core Java", className: "core-java", percent: "75%" },
+  { name: "Advanced Java", className: "advanced-java", percent: "60%" },
+  { name: "GitHub", className: "github", percent: "90%" },
+];
+
 const About = () => {
   return (
-    <div>
-        <h1>Skill</h1>
-        <div className='Skills'>
-            <ul className='li'>
-                <li>Html</li>
-                <div className='Animation Html'></div>
-                <li>Css</li>
-                <div className='Animation css '></div>
-                <li>JavaScript</li>
-                <div className='Animation js'></div>
-                <li>Sass</li>
-                <div className='Animation  sass'></div>
-                <li>MySql</li>
-                <div className='Animation my'></div>
-                <li>Core Java</li>
-                <div className='Animation cj'></div>
-                <li>Advance Java</li>
-                <div className='Animation aj'></div>
-                <li>Gitub</li>
-                <div className='Animation gt'></div>
-            </ul>
-        </div>
+    <div className='About'>
+      <h1>Skills</h1>
+      <div className='Skills'>
+        <ul>
+          {skills.map((skill, index) => (
+            <React.Fragment key={index}>
+              <li>{skill.name}</li>
+              <div className={`Animation ${skill.className}`} data-percent={skill.percent}>
+                <div className="progress" style={{ width: skill.percent }}></div>
+              </div>
+            </React.Fragment>
+          ))}
+        </ul>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;

@@ -14,7 +14,7 @@ const Footer = () => {
             </div>
             <div className='Social'>
                 <h1>Follow Us</h1>
-                <p>Linkedin</p>
+                <p><a href="http://www.linkedin.com/in/manoj-kumaresan-759733305"> Linked In</a></p>
             </div>
             <div className='hours'>
                 <h1>Business Hours</h1>

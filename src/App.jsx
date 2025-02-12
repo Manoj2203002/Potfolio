@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import Index from './Manoj/Index'
 import Footer from './Manoj/Footer'
 import Manoj from './Manoj/Manoj'
@@ -7,14 +8,16 @@ import Services from './Manoj/Services'
 const App = () => {
 
   return (
-    <div>
-      <header><Index></Index></header>
-      <body>
-      <Manoj/>
-      <About/>
-      <Services/>
-      </body>
-    <footer><Footer/></footer></div>
+    <BrowserRouter>
+    <Index/>
+    <Routes>
+      <Route path='/' element={<Manoj/>}/>
+      <Route path='/About' element={<About/>}/>
+      <Route path='/Services' element={<Services/>}/>
+      <Route path='*' element={<center><h1>404 Error</h1></center>}/>
+    </Routes>
+    <Footer/>
+    </BrowserRouter>
   )
 }
 

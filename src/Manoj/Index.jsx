@@ -1,35 +1,34 @@
-import React from 'react'
-import './Header.scss'
-const index = () => {
-  let isdark=false;
-  function Dark(){
-    isdark=!isdark;
-    document.getElementById('button').innerText=isdark?'Light':'Darkmode';
-    if(isdark){
-      document.body.style.backgroundColor="Black";
-      document.body.style.color='white';
-    }
-    else{
-      document.body.style.backgroundColor="white";
-      document.body.style.color='black'
-    }
-  }
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import './Header.scss';
+
+const Index = () => {
+  const [dark, setDark] = useState(false);
+
+  useEffect(() => {
+    document.body.style.backgroundColor = dark ? 'black' : 'white';
+    document.body.style.color = dark ? 'white' : 'black';
+  }, [dark]);
+
   return (
     <div>
-        <div className='header'>
-            <header className='mani'>
-                    <nav className='nav'>
-                        <h1>Manoj</h1>
-                        <ul className='list'>
-                          <li><a href="">Home</a></li>
-                          <li><a href="">About</a></li>
-                          <li><a href="">Services</a></li>
-                          <button id='button' onClick={Dark}>Dark mode</button> 
-                         </ul>
-                </nav>
-            </header>
-        </div>
+      <div className="header">
+        <header className="mani">
+          <nav className="nav">
+            <h1>Manoj</h1>
+            <div className="nav-links">
+              <Link to="/">Home</Link>
+              <Link to="/About">About</Link>
+              <Link to="/Services">Services</Link>
+            </div>
+            <button id="button" onClick={() => setDark(prev => !prev)}>
+              {dark ? 'Light Mode' : 'Dark Mode'}
+            </button>
+          </nav>
+        </header>
+      </div>
     </div>
-  )
-}
-export default index
+  );
+};
+
+export default Index;

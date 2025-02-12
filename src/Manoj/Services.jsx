@@ -1,30 +1,29 @@
-import React from 'react'
-import './Servies.scss'
+import React from 'react';
+import './Servies.scss';
+import { FaLaptopCode, FaDatabase, FaPlug, FaMobileAlt } from 'react-icons/fa';
+
+const services = [
+  { icon: <FaLaptopCode />, title: "UI Designing", description: "I can design web pages as per customer requests." },
+  { icon: <FaDatabase />, title: "MySQL Database", description: "Managing databases and developing new ones." },
+  { icon: <FaPlug />, title: "JDBC Connectivity", description: "Managing databases using JDBC in Advanced Java." },
+  { icon: <FaMobileAlt />, title: "Mobile App Development", description: "Using Android tools to develop mobile applications." }
+];
 
 const Services = () => {
   return (
-    <div>
-        <div className='top'>
-            <h1 style={{textAlign:'center', color:'skyblue'}}> Our Services</h1>
-            <div className='service'>
-                <h2 className='head'>UI Designing</h2>
-                <p>I can able to Designing the Web page as per the Customer Request</p>
-            </div>
-            <div className='service'>
-                <h2 className='head'>MySql Database</h2>
-                <p>Managing the Database and Developing new Database</p>
-            </div>
-            <div className='service'>
-                <h2 className='head'>JDBC Connectivity</h2>
-                <p>Managing Database using JDBC in Advance Java</p>
-            </div>
-            <div className='service'>
-                <h2 className='head'>Mobile Application Development</h2>
-                <p> Using Android Software To Develope the Mobile Aplication</p>
-            </div>
-        </div>
+    <div className="services-container">
+      <h1 className="title">Our Services</h1>
+      <div className="services-list">
+        {services.map((service, index) => (
+          <div className="service" key={index}>
+            <div className="icon">{service.icon}</div>
+            <h2 className="head">{service.title}</h2>
+            <p>{service.description}</p>
+          </div>
+        ))}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Services
+export default Services;
