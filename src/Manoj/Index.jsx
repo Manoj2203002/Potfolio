@@ -4,7 +4,7 @@ import './Header.scss';
 
 const Index = () => {
   const [dark, setDark] = useState(false);
-
+  const [menu,setmenu]=useState(false);
   useEffect(() => {
     document.body.style.backgroundColor = dark ? 'black' : 'white';
     document.body.style.color = dark ? 'white' : 'black';
