@@ -1,24 +1,32 @@
-import React from 'react'
-import { BrowserRouter,Routes,Route } from 'react-router-dom'
-import Index from './Manoj/Index'
-import Footer from './Manoj/Footer'
-import Manoj from './Manoj/Manoj'
-import About from './Manoj/About'
-import Services from './Manoj/Services'
-const App = () => {
+import About from './components/About';
+import Background from './components/Background';
+import Contact from './components/Contact';
+import Credentials from './components/Credentials';
+import Experience from './components/Experience';
+import Footer from './components/Footer';
+import Hero from './components/Hero';
+import Navbar from './components/Navbar';
+import Projects from './components/Projects';
+import Skills from './components/Skills';
+import { useTheme } from './hooks';
 
+export default function App() {
+  const [theme, toggleTheme] = useTheme();
   return (
-    <BrowserRouter>
-    <Index/>
-    <Routes>
-      <Route path='/' element={<Manoj/>}/>
-      <Route path='/About' element={<About/>}/>
-      <Route path='/Services' element={<Services/>}/>
-      <Route path='*' element={<center><h1>404 Error</h1></center>}/>
-    </Routes>
-    <Footer/>
-    </BrowserRouter>
-  )
+    <>
+      <a className="skip-link" href="#about">Skip to content</a>
+      <Background />
+      <Navbar theme={theme} onToggleTheme={toggleTheme} />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Credentials />
+        <Contact />
+      </main>
+      <Footer />
+    </>
+  );
 }
-
-export default App

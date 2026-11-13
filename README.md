@@ -1,8 +1,24 @@
-# React + Vite
+# Manoj Kumaresan — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio of **Manoj Kumaresan**, Full Stack Developer (.NET · Angular · Python).
 
-Currently, two official plugins are available:
+Single-page React + Vite site with light/dark theme, scroll-triggered animations, 3D tilt cards,
+an animated tech marquee and a typing hero.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+## Edit content
+
+All text (profile, skills, experience, projects, certifications, education) lives in
+[`src/data.js`](src/data.js). The downloadable resume is `public/ManojResume.pdf`.
+
+## Build
+
+```bash
+npm run build
+```
